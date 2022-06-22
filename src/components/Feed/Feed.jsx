@@ -1,16 +1,23 @@
-import * as React from "react"
-import Tweet from "../Tweet/Tweet"
-import TweetBox from "../TweetBox/TweetBox"
-import "./Feed.css"
+import * as React from "react";
+import Tweet from "../Tweet/Tweet";
+import TweetBox from "../TweetBox/TweetBox";
+import "./Feed.css";
 
-export default function Feed({tweets, setTweets, userProfile}) {
-
-
-  console.log("Tweets: ", tweets)
+export default function Feed({ tweets, setTweets, userProfile, tweetText, setTweetText }) {
+  console.log("Tweets: ", tweets);
   return (
     <div className="col feed">
-      {/* UPDATE TWEET BOX PROPS HERE */}
-      <TweetBox props = {tweets} setTweets = {setTweets} userProfile = {userProfile} />
+      {tweets.map((twitterfeed) => {
+        return <Tweet tweet={twitterfeed} />;
+      })}
+
+      <TweetBox
+        tweets={tweets}
+        setTweets={setTweets}
+        userProfile={userProfile}
+        tweetText = {tweetText}
+        setTweetText = {setTweetText}
+      />
 
       <div className="see-new-tweets beet">
         <p>
@@ -18,9 +25,7 @@ export default function Feed({tweets, setTweets, userProfile}) {
         </p>
       </div>
 
-      <div className="twitter-feed">{/* ADD CODE HERE */
-      
-      }</div>
+      <div className="twitter-feed">{/* ADD CODE HERE */}</div>
     </div>
-  )
+  );
 }

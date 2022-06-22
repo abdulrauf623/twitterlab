@@ -16,12 +16,17 @@ export default function App() {
 
   const [tweets, setTweets] = useState([firstTweet])
 
+
+  const [tweetText, setTweetText] = useState("")
+
+
+
   return (
     <div className="app">
       <Navbar navLinks = {navLinks}/>
       <main>
         <UserProfile userProfile={userProfile}/>
-        <Feed tweets ={tweets} setTweets = {setTweets} userProfile = {userProfile}/>
+        <Feed tweets ={tweets} setTweets = {setTweets} userProfile = {userProfile} tweetText = {tweetText} setTweetText = {setTweetText}/>
         <Advertisements />
       </main>
     </div>

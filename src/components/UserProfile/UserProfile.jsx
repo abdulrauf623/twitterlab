@@ -41,13 +41,13 @@ export function CardContent({name, handle}) {
   )
 }
 
-export function CardFooter(props) {
+export function CardFooter({numTweets, numFollowers}) {
   return (
     <div className="card-footer">
       <p>Tweets</p>
       <p>Followers</p>
-      <span className="metric">{props.numTweets ? formatNumTweets(props.numTweets) : null}</span>
-      <span className="metric">{props.numFollowers ? formatNumFollowers(props.numFollowers) : null}</span>
+      <span className="metric">{numTweets ? formatNumTweets(numTweets) : null}</span>
+      <span className="metric">{numFollowers ? formatNumFollowers(numFollowers) : null}</span>
     </div>
   )
 }
