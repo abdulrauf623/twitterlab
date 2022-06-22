@@ -2,7 +2,14 @@ import * as React from "react"
 import AvatarIcon from "../AvatarIcon/AvatarIcon"
 import "./Navbar.css"
 
+let link;
+
 export default function Navbar({ navLinks }) {
+
+
+  link = navLinks
+
+
   return (
     <nav>
       <div className="navbar-container">
@@ -16,14 +23,30 @@ export default function Navbar({ navLinks }) {
 }
 
 export function NavLinks({ navLinks }) {
-  return <ul className="nav-links">{/* WRITE CODE HERE */}</ul>
+
+
+  navLinks = link
+  return <ul className="nav-links">{
+
+     navLinks.map((lin) =>{
+
+
+return <NavLink navLink = {lin} />
+
+
+
+})
+
+
+
+  }</ul>
 }
 
 export function NavLink({ navLink }) {
   return (
     <li className={navLink.className}>
       <i className={navLink.icon}></i>
-      <span></span>
+      <span>{navLink.label}</span>
     </li>
   )
 }

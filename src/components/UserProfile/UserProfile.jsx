@@ -7,15 +7,26 @@ export default function UserProfile({ userProfile }) {
     <div className="col user-profile">
       <div className="card">
         <div className="card-bg" />
-        <CardContent />
-        <CardFooter />
+        <CardContent {...userProfile} />
+        <CardFooter {...userProfile} />
       </div>
     </div>
   )
 }
 
-export function CardContent(props) {
+export function CardContent({name, handle}) {
+
+
+
+
+  console.log("Name", name)
+
+
+
+
   return (
+
+    
     <div className="card-content">
       <span className="fa-stack add-picture-icon">
         <i className="fas fa-camera fa-stack-2x">
@@ -23,8 +34,8 @@ export function CardContent(props) {
         </i>
       </span>
       <div className="twitter-handle">
-        <h3>{props.name}</h3>
-        <p>@{props.handle}</p>
+        <h3>{name}</h3>
+        <p>@{handle}</p>
       </div>
     </div>
   )
